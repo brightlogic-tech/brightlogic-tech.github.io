@@ -1,0 +1,7 @@
+RewriteEngine On
+ # Force WWW
+RewriteCond %{HTTP_HOST} ^brightlogic\.tech [NC]
+RewriteRule (.*) https://www.brightlogic.tech/$1 [R=301,QSA,L]
+ # Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://www.brightlogic.tech/$1 [R=301,L]
